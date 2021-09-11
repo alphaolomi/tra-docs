@@ -7,7 +7,7 @@ site_description: >-
 # Repository
 repo_name: alphaolomi/tra-vfd-docs
 repo_url: https://github.com/alphaolomi/tra-vfd-docs
-edit_uri: ""
+edit_uri: edit/main/docs/
 
 # Copyright
 # copyright: Copyright &copy; 2021 Alpha Olomi
@@ -16,11 +16,17 @@ copyright: Copyright &copy; 2021 Alpha Olomi
 nav:
   - Home: index.md
 
-# plugins:
-# - social
+plugins:
+  - search
+  - git-revision-date
+  - git-revision-date-localized:
+      fallback_to_build_date: true
+      
 
 theme:
   name: material
+  icon:
+    repo: fontawesome/brands/github
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -36,15 +42,21 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
-  extra:
-    analytics:
-      provider: google
-      property: G-7D7ZB0C1E5
+extra:
+  analytics:
+    provider: google
+    property: G-7D7ZB0C1E5
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/alphaolomi
 
 markdown_extensions:
+  - pymdownx.highlight:
+      linenums: true
+  - pymdownx.snippets
+  - pymdownx.keys
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
   - admonition
   - abbr
   - attr_list

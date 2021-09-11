@@ -233,7 +233,11 @@ Billing system shall `POST` to `EFDMS` data in `XML` format containing the follo
 ## 1.3. Message Flow
 
 <!--  -->
+
+<figure>
 <p align="center" ><img src="./assets/diagram.png" alt="Message Flow Diagram"> </p>
+  <figcaption>Message Flow Diagram</figcaption>
+</figure>
 
 <br><br><br>
 
