@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+
+<EFDMS>
+    <RCTACK>
+        <RCTNUM>1</RCTNUM>
+        <DATE>2020-01-31</DATE>
+        <TIME>08:08:03</TIME>
+        <ACKCODE>0</ACKCODE>
+        <ACKMSG>Success</ACKMSG>
+    </RCTACK>
+    <EFDMSSIGNATURE>NOUSX8NDTLmzuOFIW72753Tnfk/Z8RNQU4zKKSDJKDAEjUYSft5q/qZtW+du3A+na5Zk31H0dItHKMudg5w==</EFDMSSIGNATURE>
+</EFDMS>

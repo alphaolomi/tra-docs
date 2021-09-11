@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Message request body for receipt/invoice -->
+<EFDMS>
+    <RCT>
+        <DATE>2020-01-27</DATE>
+        <TIME>12:49:55</TIME>
+        <TIN>192941215</TIN>
+        <REGID>TZ010077713</REGID>
+        <EFDSERIAL>10TZ100200</EFDSERIAL>
+        <CUSTIDTYPE>6</CUSTIDTYPE>
+        <CUSTID />
+        <CUSTNAME>Juma Khassim</CUSTNAME>
+        <MOBILENUM>919707354053</MOBILENUM>
+        <RCTNUM>2026783</RCTNUM>
+        <DC>30</DC>
+        <ZNUM>20200127</ZNUM>
+        <RCTVNUM>Z4V1NU202</RCTVNUM>
+        <ITEMS>
+            <ITEM>
+                <ID>1</ID>
+                <DESC>Payment to cement bags</DESC>
+                <TAXCODE>1</TAXCODE>
+                <AMT>20</AMT>
+                <QTY>1</QTY>
+            </ITEM>
+        </ITEMS>
+        <TOTALS>
+            <TOTALTAXEXCL>16.95</TOTALTAXEXCL>
+            <TOTALTAXINCL>20</TOTALTAXINCL>
+            <DISCOUNT>0.00</DISCOUNT>
+        </TOTALS>
+        <PAYMENTS>
+            <PMTTYPE>EMONEY</PMTTYPE>
+            <PMTAMOUNT>20</PMTAMOUNT>
+        </PAYMENTS>
+        <VATTOTALS>
+            <VATRATE>A</VATRATE>
+            <NETTAMOUNT>16.95</NETTAMOUNT>
+            <TAXAMOUNT>3.05</TAXAMOUNT>
+        </VATTOTALS>
+    </RCT>
+    <EFDMSSIGNATURE>AEa/TKoBJ4qkhmPFNYkpXLx2QheZtXHikVtX5BppK4PIEyNdlgosw2cqEp0sylImk1uktdq </EFDMSSIGNATURE>
+</EFDMS>
