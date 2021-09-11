@@ -1,4 +1,4 @@
-<p align="center"> <img src="./tra2.jpg" alt="TRA Logo"> </p>
+<p align="center"> <img src="../assets/tra2.jpg" alt="TRA Logo"> </p>
 
 <h1 align="center"> VIRTUAL FISCAL DEVICE (VFD) API</h1>
 
@@ -221,12 +221,13 @@ Billing system shall `POST` to EFDMS data in `XML` format containing the followi
 | VATRATE    | Char   | Identifier of the Tax rate<br>A= 18 (Standard Rate for VAT items)<br>B= 0 (Special Rate)<br>C= 0 (Zero rated for Non-VAT items)<br>D= 0 (Special Relief for relieved items)<br>E= 0 (Exempt items) |
 | NETTAMOUNT | Double | Nett Sales                                                                                                                                                                                         |
 | TAXAMOUNT  | Double | Tax Amount for the Rate                                                                                                                                                                            |
+
 <br><br><br>
 
 ## 1.3. Message Flow
 
 <!--  -->
-<p align="center" ><img src="./diagram.png" alt="Message Flow Diagram"> </p>
+<p align="center" ><img src="../assets/diagram.png" alt="Message Flow Diagram"> </p>
 
 <br><br><br>
 
@@ -263,7 +264,6 @@ All message request from taxpayer billing systems to the EFDMS shall be enclosed
 
 <!--  -->
 
-
 <br><br>
 
 #### Example of registration acknowledgment message
@@ -274,30 +274,30 @@ All message request from taxpayer billing systems to the EFDMS shall be enclosed
 
 ### Data types for registration acknowledgement
 
-| Field       | Data Type   | Mandatory | Description                                                                                                                     |
-| ----------- | ----------- | --------- | ------------------------------------------------------------------------------------------------------------------------------- | ----------- | ------------------------------------------------------------------------ | --------- |
-| EFDMSRESP   |             |           | Registration Information Envelop                                                                                                |
-| ACKCODE     | Int(1)      | Yes       | 0 means success. Else it would be an error code                                                                                 |
-| ACKMSG      | String (50) | Yes       | Describes the ACKCODE above                                                                                                     |
-| REGID       | String (50) | Yes       | VFD System Registration Id                                                                                                      |
-| SERIAL      | String (14) | Yes       | VFD System Serial Number also known as                                                                                          | CERTKEY or  | EFDSERIAL                                                                |
-| UIN         | String      | Yes       | User identification number issued by TRA once Taxpayer has been registered in EFDMS                                             |
-| TIN         | Number      | Yes       | Tax Identification Number of business owner                                                                                     |
-| VRN         | String      | Yes       | Vat Registration Number                                                                                                         |
-| MOBILE      | String      | Yes       | Mobile/Telephone number                                                                                                         |
-| STREET      | String      | Yes       | Street                                                                                                                          |
-| CITY        | String      | Yes       | City                                                                                                                            |
-| ADDRESS     | String      | Yes       | Tax Payer’s Address                                                                                                             |
-| COUNTRY     | String      | Yes       | Country                                                                                                                         |
-| NAME        | String(100) | Yes       | Tax Payer Trading Name                                                                                                          |
-| RECEIPTCODE | String      | Yes       | Also known as, RCTVCODE represents a unique                                                                                     | code        | issued during registration.                                              |
-| REGION      | String      | Yes       | Tax Region                                                                                                                      |
-| GC          | Number      | Yes       | GC is a global counter of the receipts/invoice                                                                                  | issued from | day one and shall keep incrementing. i.e. how many total receipts signed | till date |
-| TAXOFFICE   | String      | Yes       | Tax Payer’s Tax Office                                                                                                          |
-| USERNAME    | String      | Yes       | Username to be used for Token Request                                                                                           |
-| PASSWORD    | String      | Yes       | Secret Key to be used for Token Request                                                                                         |
-| TOKENPATH   | String      | Yes       | URL Path for Token Request                                                                                                      |
-| TAXCODE     | Char        | Yes       | Applicable tax on the item <br>1=Standard(CODEA) <br>2=Special rate(CODEB) <br>3=Zero Rated (CODEC) <br>4=Special Relief(CODED) |
+| Field       | Data Type   | Mandatory | Description                                                                                                                                   |
+| ----------- | ----------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| EFDMSRESP   |             |           | Registration Information Envelop                                                                                                              |
+| ACKCODE     | Int(1)      | Yes       | 0 means success. Else it would be an error code                                                                                               |
+| ACKMSG      | String (50) | Yes       | Describes the ACKCODE above                                                                                                                   |
+| REGID       | String (50) | Yes       | VFD System Registration Id                                                                                                                    |
+| SERIAL      | String (14) | Yes       | VFD System Serial Number also known as CERTKEY or EFDSERIAL                                                                                   |
+| UIN         | String      | Yes       | User identification number issued by TRA once Taxpayer has been registered in EFDMS                                                           |
+| TIN         | Number      | Yes       | Tax Identification Number of business owner                                                                                                   |
+| VRN         | String      | Yes       | Vat Registration Number                                                                                                                       |
+| MOBILE      | String      | Yes       | Mobile/Telephone number                                                                                                                       |
+| STREET      | String      | Yes       | Street                                                                                                                                        |
+| CITY        | String      | Yes       | City                                                                                                                                          |
+| ADDRESS     | String      | Yes       | Tax Payer’s Address                                                                                                                           |
+| COUNTRY     | String      | Yes       | Country                                                                                                                                       |
+| NAME        | String(100) | Yes       | Tax Payer Trading Name                                                                                                                        |
+| RECEIPTCODE | String      | Yes       | Also known as, RCTVCODE represents a unique code issued during registration.                                                                  |
+| REGION      | String      | Yes       | Tax Region                                                                                                                                    |
+| GC          | Number      | Yes       | GC is a global counter of the receipts/invoice issued from day one and shall keep incrementing. i.e. how many total receipts signed till date |
+| TAXOFFICE   | String      | Yes       | Tax Payer’s Tax Office                                                                                                                        |
+| USERNAME    | String      | Yes       | Username to be used for Token Request                                                                                                         |
+| PASSWORD    | String      | Yes       | Secret Key to be used for Token Request                                                                                                       |
+| TOKENPATH   | String      | Yes       | URL Path for Token Request                                                                                                                    |
+| TAXCODE     | Char        | Yes       | Applicable tax on the item <br>1=Standard(CODEA) <br>2=Special rate(CODEB) <br>3=Zero Rated (CODEC) <br>4=Special Relief(CODED)               |
 
 <br><br>
 
@@ -386,10 +386,10 @@ Message request body for Z report
 ### Data Type for Z report posting
 
 | Field            | Data Type | Description Remarks                                                                                                                                                                                                                                                                                                                                                                                                      |
-| ---------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | 
-| DATE             | Date      | Date of the Z report                                                                                                                                                                                                                                                                                                                                                                                                     | 
-| TIME             | Time      | Time of the issue (^)                                                                                                                                                                                                                                                                                                                                                                                                    | 
-| HEADER           | Recordset | Contains Header lines LINE String Inside Header, define Name, Address, TIN, VRN, Telephone etc. as programmed in EFD and printed on each receipt Can be multiple, minimum 4 header lines and maximum 8 header lines                                                                                                                                                                                                      | 
+| ---------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| DATE             | Date      | Date of the Z report                                                                                                                                                                                                                                                                                                                                                                                                     |
+| TIME             | Time      | Time of the issue (^)                                                                                                                                                                                                                                                                                                                                                                                                    |
+| HEADER           | Recordset | Contains Header lines LINE String Inside Header, define Name, Address, TIN, VRN, Telephone etc. as programmed in EFD and printed on each receipt Can be multiple, minimum 4 header lines and maximum 8 header lines                                                                                                                                                                                                      |
 | VRN              | String    | VAT registration number If taxpayer is registered on VAT, if not registered should show NOT REGISTERED                                                                                                                                                                                                                                                                                                                   |
 | TIN              | String    | TAX identification number (^)                                                                                                                                                                                                                                                                                                                                                                                            |
 | TAXOFFICE        | String    | Name of the Tax office where a taxpayer submits his/her returns                                                                                                                                                                                                                                                                                                                                                          |
