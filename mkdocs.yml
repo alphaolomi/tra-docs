@@ -1,14 +1,53 @@
 site_name: TRA VFD API Documentation
+site_url: https://tra-docs.netlify.app/
+site_author: Alpha Olomi
+site_description: >-
+  TRA VFD API Documentation for Developers
+
+# Repository
+repo_name: alphaolomi/tra-vfd-docs
+repo_url: https://github.com/alphaolomi/tra-vfd-docs
+edit_uri: ""
+
+# Copyright
+# copyright: Copyright &copy; 2021 Alpha Olomi
+copyright: Copyright &copy; 2021 Alpha Olomi
 
 nav:
   - Home: index.md
 
-theme: 
-  name: material  
-  analytics:
-    gtag: G-7D7ZB0C1E5
-  shortcuts:
-    help: 191    # ?
-    next: 78     # n
-    previous: 80 # p
-    search: 83   # s
+# plugins:
+# - social
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: yellow
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: yellow
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  extra:
+    analytics:
+      provider: google
+      property: G-7D7ZB0C1E5
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/alphaolomi
+
+markdown_extensions:
+  - admonition
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
