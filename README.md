@@ -8,17 +8,17 @@ This is an attempt to make it easier for developers to work on this new & exciti
 
 A lot of effort was spent to make this as accurate as possible, However, If there is any error/confusion please refer to the original documents.
 
-## Getting Started
-
-This documentation is created using `mkdocs` therefore in order run it locally you need to have python, [pip](https://pypi.org/project/pip/) and ofcourse [`mkdocs`](https://www.mkdocs.org/) installed
 
 
 ## Contributions
 
-### To install `mkdocs` just run the following command
+This documentation is created using `mkdocs` therefore in order run it locally you need to have python, [pip](https://pypi.org/project/pip/) and ofcourse [`mkdocs`](https://www.mkdocs.org/) installed
 
-```sh
-pip install mkdocs mkdocs-bootswatch
+Using venv
+```bash
+virtualenv venv
+source venv/bin/activate
+pip install
 ```
 
 Start the live-reloading docs server.
