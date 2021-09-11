@@ -7,7 +7,7 @@ lunr==0.5.8
 Markdown==3.3.4
 MarkupSafe==2.0.1
 mkdocs==1.2.2
-mkdocs-material==0.1.0
+mkdocs-material==0.2.4
 nltk==3.6.2
 PyYAML==5.4.1
 regex==2021.8.28
