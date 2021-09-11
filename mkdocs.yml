@@ -1,0 +1,14 @@
+site_name: TRA VFD API Documentation
+
+nav:
+  - Home: index.md
+
+theme: 
+  name: material  
+  analytics:
+    gtag: G-ABC123
+  shortcuts:
+    help: 191    # ?
+    next: 78     # n
+    previous: 80 # p
+    search: 83   # s

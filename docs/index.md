@@ -1,18 +1,20 @@
-<p align="center"> <img src="../assets/tra2.jpg" alt="TRA Logo"> </p>
+<p align="center"> <img src="./assets/tra2.jpg" alt="TRA Logo"> </p>
 
 <h1 align="center"> VIRTUAL FISCAL DEVICE (VFD) API</h1>
 
 ## API INTEGRATION DOCUMENT
 
-- Endpoint for Registration (TEST SERVER) https://virtual.tra.go.tz/efdmsRctApi/api/vfdRegReq
 
-- Endpoint for Token (TEST SERVER) https://virtual.tra.go.tz/efdmsRctApi/vfdtoken
 
-- Endpoint for Receipt/Invoice posting (TEST SERVER) https://virtual.tra.go.tz/efdmsRctApi/api/efdmsRctInfo
+- Endpoint for Registration (TEST SERVER) [https://virtual.tra.go.tz/efdmsRctApi/api/vfdRegReq](https://virtual.tra.go.tz/efdmsRctApi/api/vfdRegReq)
 
-- Endpoint for Z report posting (TEST SERVER) https://virtual.tra.go.tz/efdmsRctApi/api/efdmszreport
+- Endpoint for Token (TEST SERVER) [https://virtual.tra.go.tz/efdmsRctApi/vfdtoken](https://virtual.tra.go.tz/efdmsRctApi/vfdtoken)
 
-- Endpoint for verification of receipts/invoices (TEST SERVER) https://virtual.tra.go.tz/efdmsRctVerify/Home/Index
+- Endpoint for Receipt/Invoice posting (TEST SERVER) [https://virtual.tra.go.tz/efdmsRctApi/api/efdmsRctInfo](https://virtual.tra.go.tz/efdmsRctApi/api/efdmsRctInfo)
+
+- Endpoint for Z report posting (TEST SERVER) [https://virtual.tra.go.tz/efdmsRctApi/api/efdmszreport](https://virtual.tra.go.tz/efdmsRctApi/api/efdmszreport)
+
+- Endpoint for verification of receipts/invoices (TEST SERVER) [https://virtual.tra.go.tz/efdmsRctVerify/Home/Index](https://virtual.tra.go.tz/efdmsRctVerify/Home/Index)
 
 <!-- ## See abbreviations on page 30 -->
 
@@ -53,12 +55,12 @@ code, verification code. VFD must be able to generate verification information
 
 ## INTEGRATION PARAMETERS
 
-Client = webapi
-Certkey – TRA will provide during integration
-Cert-serial – Open certificate file and look for serial number
-TIN- Taxpayer identification number for the seller
-QR format: https://virtual.tra.go.tz/efdmsRctVerify/RCTVNUM
-QR - Taxpayer system will generate QR and not TRA
+- Client = webapi
+- Certkey - TRA will provide during integration
+- Cert-serial - Open certificate file and look for serial number
+- TIN- Taxpayer identification number for the seller
+- QR format: [https://virtual.tra.go.tz/efdmsRctVerify/RCTVNUM](https://virtual.tra.go.tz/efdmsRctVerify/RCTVNUM)
+- QR - Taxpayer system will generate QR and not TRA
 
 <br><br><br>
 
@@ -128,7 +130,7 @@ QR - Taxpayer system will generate QR and not TRA
 
 ## 1.1. Receipt/invoice format
 
-Billing system shall `POST` to EFDMS data in `XML` format containing the following information
+Billing system shall `POST` to `EFDMS` data in `XML` format containing the following information
 
 - 1.1.1. Date of receipt/invoice in the format “YYYY-MM-DD”
 - 1.1.2. Time of receipt/invoice in the format HH:MM: SS
@@ -166,17 +168,17 @@ Billing system shall `POST` to EFDMS data in `XML` format containing the followi
 | DATE       | Date      | Date of Issue                                                                                                                                                                                                                                                                                                                                  |
 | TIME       | Time      | Time of the issue                                                                                                                                                                                                                                                                                                                              |
 | TIN        | Number    | TAX identification number of the business owner                                                                                                                                                                                                                                                                                                |
-| REGID      | String    | This is a unique ID issued to a virtual device (Taxpayer Billing System) upon a successful registration. User should not be able to program REGID, it should only be received from TRA server.                                                                                                                                                 | TRA will provide `REGID` during integration                                                                                                                                                                                              |
+| REGID      | String    | This is a unique ID issued to a virtual device (Taxpayer Billing System) upon a successful registration. User should not be able to program `REGID`, it should only be received from TRA server.                                                                                                                                               | TRA will provide `REGID` during integration                                                                                                                                                                                              |
 | EFDSERIAL  | String    | This is the serial number assigned to the virtual device (Taxpayer Billing System) also as known as CERTKEY. This number is composed of two digits that represent the manufacturer code followed by two letters representing the Tanzania country code and followed by the serial number of the production.                                    | Each virtual fiscal device should have a unique serial number to avoid matching with another virtual fiscal device(s). TRA will provide EFDSERIAL during integration. The format of the serial number should be like this: Example: 10TZ |
 | CUSTIDTYPE | Number    | Buyer Used ID type. This can be one of the following 1=TIN 2=Driving License 3=Voters Number 4=Passport 5=NID (National Identity 6=NIL (If there is no ID)                                                                                                                                                                                     | This is mandatory.                                                                                                                                                                                                                       |
-| CUSTID     | String    | Identification Number corresponding to the type chosen Mandatory if CUSTIDTYPE is not 6                                                                                                                                                                                                                                                        |
+| CUSTID     | String    | Identification Number corresponding to the type chosen Mandatory if `CUSTIDTYPE` is not 6                                                                                                                                                                                                                                                      |
 | CUSTNAME   | String    | Name of the Buyer. Option                                                                                                                                                                                                                                                                                                                      |
 | MOBILENUM  | Number    | Buyer’s Mobile Number Option                                                                                                                                                                                                                                                                                                                   |
 | RCTNUM     | Number    | This represent receipt/invoice number of each transaction that is unique for every transaction. RCTNUM starts with 1 and continue with sequence throughout. It will keep incrementing for every transaction. RCTNUM will be equal to GC where this is a global counter. i.e. 31, 32, 33.... 60 and this sequence should always increment by 1. |
 | DC         | Number    | DC is the Daily Counter and is a sequence of receipts/ invoices issued for the day. DC will reset to 1 the following day up to the last receipt/ invoice issued                                                                                                                                                                                | For example, if until end of day, you have issued 30 receipts/invoice then we will have receipts/invoices no. 1, 2, 3.... 30. As for the following day, the DC counting will reset to 1,2,3,...                                          |
 | GC         | Number    | GC is a global counter of the receipts/invoice issued from day one and shall keep incrementing throughout the life of the VFD                                                                                                                                                                                                                  | Example, if the last GC number for today after close of business is 1000 Then the value of GC when you open business next day will be 1001                                                                                               |
 | ZNUM       | Number    | ZNUM for VFDs will be a number in format of (YYYYMMDD) e.g. 20190626 and this will change on Daily Basis i.e. ZNUM for Today: 20191018, ZNUM for yesterday: 20191017, ZNUM for tomorrow: 20191019. ZNUM is date of transaction written in number format.                                                                                       |
-| RCTVNUM    | String    | A receipt/invoice verification number composes of RECEIPTCODE and GC i.e. GC appended to RECEIPTCODE. During registration, a VFD will be provided with RECEIPTCODE                                                                                                                                                                             | Example. Format description RECEIPTCODE: AAAA11, GC: RCTVNUM AAAA This filed is mandatory:                                                                                                                                               |
+| RCTVNUM    | String    | A receipt/invoice verification number composes of `RECEIPTCODE` and GC i.e. GC appended to RECEIPTCODE. During registration, a VFD will be provided with RECEIPTCODE                                                                                                                                                                           | Example. Format description `RECEIPTCODE`: AAAA11, GC: RCTVNUM AAAA This filed is mandatory:                                                                                                                                             |
 | ITEMS      | RecordSet | Contains ITEM                                                                                                                                                                                                                                                                                                                                  |                                                                                                                                                                                                                                          |
 | ITEM       | RecordSet | RecordSet that contains details of the Item                                                                                                                                                                                                                                                                                                    |                                                                                                                                                                                                                                          |
 | TOTALS     | RecordSet | Record that contains totals of the receipts/invoice                                                                                                                                                                                                                                                                                            |                                                                                                                                                                                                                                          |
@@ -227,7 +229,7 @@ Billing system shall `POST` to EFDMS data in `XML` format containing the followi
 ## 1.3. Message Flow
 
 <!--  -->
-<p align="center" ><img src="../assets/diagram.png" alt="Message Flow Diagram"> </p>
+<p align="center" ><img src="./assets/diagram.png" alt="Message Flow Diagram"> </p>
 
 <br><br><br>
 
@@ -249,14 +251,14 @@ A message request from taxpayer billing system to the EFDMS include the followin
 
 All message request from taxpayer billing systems to the EFDMS shall be enclosed in root (envelope) tag called <EFDMS>
 
-| Tag                   | Description                                           |
-| --------------------- | ----------------------------------------------------- | -------------- |
-| `<EFDMS>`             | Root tag of the message request                       |
-| `<REGDATA>`           | Tag that contains two tags <TIN> and <CERTKEY>        |
-| `<TIN>`               | Taxpayer Identification Number of the business owner  |
-| `<CERTKEY>`           | Vendor serial number which uniquely identify taxpayer | billing system |
-| `<EFDMSSIGNATURE>`    | Using PKCS12 standard, signature obtained by Hashing  |
-| `<REGDATA></REGDATA>` | using SHA 1 with RSA then result encoded to base64.   |
+| Tag                   | Description                                                          |
+| --------------------- | -------------------------------------------------------------------- |
+| `<EFDMS>`             | Root tag of the message request                                      |
+| `<REGDATA>`           | Tag that contains two tags <TIN> and <CERTKEY>                       |
+| `<TIN>`               | Taxpayer Identification Number of the business owner                 |
+| `<CERTKEY>`           | Vendor serial number which uniquely identify taxpayer billing system |
+| `<EFDMSSIGNATURE>`    | Using PKCS12 standard, signature obtained by Hashing                 |
+| `<REGDATA></REGDATA>` | using SHA 1 with RSA then result encoded to base64.                  |
 
 <br><br>
 
@@ -482,11 +484,12 @@ Signature generation:
 
 ### SAMPLE CODE FOR REFERENCE
 
-Please refer this
+Please refer this PHP code
 
 ```php
 <!--
-PHP EXAMPLE TO SEND SIGNED EFD MESSAGE REQUEST DATA TO TRA AND VERIFY SIGNED RESPONSE GENERATED BY TRA
+PHP EXAMPLE TO SEND SIGNED EFD MESSAGE REQUEST DATA
+ TO TRA AND VERIFY SIGNED RESPONSE GENERATED BY TRA
 Intended Users: TAX PAYERS
 Prepared by: Richard Kazimoto
 Date: 23 September, 2019.
@@ -495,11 +498,11 @@ Date: 23 September, 2019.
 
 ## Abbreviations
 
-- EFDMS Electronic Fiscal Device Management System
-- VFD Virtual Fiscal Device
-- CLIENT Indicate mode of integration
-- CERT-SERIAL Serial number of the issued certificate(hex) private key encoded to base 64
-- CERTKEY Serial number of the virtual device issued to taxpayer
-- REGDATA Tag containing registration request
-- TIN Taxpayer Identification number
-- EFDMSSIGNATURE Signature generated after signing registration or receipt/invoice content.
+- `EFDMS` = Electronic Fiscal Device Management System
+- `VFD` = Virtual Fiscal Device
+- `CLIENT` = Indicate mode of integration
+- `CERT` =-SERIAL Serial number of the issued certificate(hex) private key encoded to base 64
+- `CERTKEY` = Serial number of the virtual device issued to taxpayer
+- `REGDATA` = Tag containing registration request
+- `TIN` = Taxpayer Identification number
+- `EFDMSSIGNATURE` = Signature generated after signing registration or receipt/invoice content.
