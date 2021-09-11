@@ -18,7 +18,7 @@ Using venv
 ```bash
 virtualenv venv
 source venv/bin/activate
-pip install
+pip install -r requirements.txt
 ```
 
 Start the live-reloading docs server.
