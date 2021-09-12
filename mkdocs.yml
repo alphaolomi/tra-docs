@@ -15,7 +15,12 @@ copyright: Copyright &copy; 2021 Alpha Olomi
 
 nav:
   - Home: index.md
-
+  - Guide:
+    - Introduction: guide/introduction.md
+    - API: guide/api.md
+  - Integrations:
+    - Node.js: integrations/nodejs.md
+  - About: about.md
 plugins:
   - search
   - git-revision-date
