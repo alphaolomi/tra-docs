@@ -5,8 +5,8 @@ site_description: >-
   TRA VFD API Documentation for Developers
 
 # Repository
-repo_name: alphaolomi/tra-vfd-docs
-repo_url: https://github.com/alphaolomi/tra-vfd-docs
+repo_name: alphaolomi/tra-docs
+repo_url: https://github.com/alphaolomi/tra-docs
 edit_uri: edit/main/docs/
 
 # Copyright
