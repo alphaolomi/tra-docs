@@ -3,7 +3,7 @@ click==8.0.3
 future==0.18.2
 ghp-import==2.0.2
 gitdb==4.0.9
-GitPython==3.1.25
+GitPython==3.1.26
 importlib-metadata==4.10.0
 Jinja2==3.0.3
 joblib==1.1.0
@@ -16,9 +16,9 @@ mkdocs==1.2.3
 mkdocs-bootswatch==1.1
 mkdocs-git-revision-date-localized-plugin==0.11.1
 mkdocs-git-revision-date-plugin==0.3.1
-mkdocs-material==8.1.4
+mkdocs-material==8.1.6
 mkdocs-material-extensions==1.0.3
-nltk==3.6.6
+nltk==3.6.7
 packaging==21.3
 Pygments==2.11.2
 pymdown-extensions==9.1
