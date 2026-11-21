@@ -117,7 +117,7 @@ const response = await sendUploadInvoiceRequest({
   customerId: '',
   customerIdType: '6',
   customerName: 'John Doe',
-  mobileNumber: '255755123123',
+  mobileNumber: '255700000000',
   items: [
     {
       ID: 1,

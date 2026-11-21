@@ -29,9 +29,9 @@ mkdocs serve
 
 Now you can view the documentation by just going to `http://localhost:8000`
 
-## Licence
+## About this guide
 
-**MIT**
+This is an unofficial, community-written guide. It is not affiliated with or endorsed by the Tanzania Revenue Authority (TRA). Sample values are placeholders. For anything authoritative, refer to TRA's official documentation.
 
 ## Contributing
 
