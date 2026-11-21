@@ -30,7 +30,7 @@ $cert_store = file_get_contents('vfdClient.pfx');
 $clientSignature = openssl_pkcs12_read($cert_store, $cert_info, 'Password');
 $privateKey = $cert_info['pkey'];
 $publicKey = openssl_get_privatekey($privateKey);
-$certBase = base64_encode('15 70 1e 15 39 94 7e ab 46 1f 0c f1 33 bc ac c9');
+$certBase = base64_encode('00 11 22 33 44 55 66 77 88 99 aa bb cc dd ee ff');
 
 // Compute Signature with SHA1
 $payloadData = "<REGDATA><TIN>$TIN</TIN><CERTKEY>$certKey</CERTKEY></REGDATA>";
@@ -64,8 +64,7 @@ if ($ackCode == 0) /* 0 = Response Code for Successful Registration */ {
     $authenticationData = "username=$username&password=$password&grant_type=password";
     echo $authenticationData;
     $tokenACKData = sendRequest($urlReceipt, $headers, $authenticationData);
-    //$token = $tokenACKData['access_token'];
-    $token = "4uMgpgRXgnWRL1PHfZq20Cy2PMG5VgshatGgsVN5roS_94TDjuJKcX95oaexRvrsh3k6065YZI5FO6G2dKImnwV_FsilpL-WKpDqUTODKjEdWoy8ukh5r_p5wMQe82jk26Z-Aoz7oqNU4DtnV_ogvdt5ol_hmQRGIQc6RLqRKXSTsEmSuae16rcHOnV0WfpdJuuqhv2UZzQCcGprFF6YaLUIWVowNE1MyjUmyHTW1WB88isOvUWtO2iecHapiE9hpJhEjvL6kKZYYIme1BCYiYZwA95detEViUzjrPdpUkAKRVZJocHCp324KQTnuTdnU9R_9z0MVQVDdGMuDJADZr1tN1-jTsAo-ry_H4C-Q96eYZZuzTVB4pnVUVEF-elCvQGvRT2g7H8PhK4Xzgx50z6Z6cosuwSGhvMy1ekemSAknZsf71Hqao7_bpA_A4YP_";
+    $token = $tokenACKData['access_token'];
 } else {
     $ackMsg = $xmlACKRegistration->EFDMSRESP->ACKMSG;
     echo 'Error ' . $ackMsg;

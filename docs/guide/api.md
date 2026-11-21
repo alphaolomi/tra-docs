@@ -327,7 +327,7 @@ Token request message shall include three parameters as shown in the following t
 
 ```json
 {
-  "access_token": "c3h4pIurCN85yOUJA1B--brtlnpvwAIVbNq-lD-wId3aUXHm2j6FweyZ0mLFitANgQ4vsotkdF7cR3F3GNdzwGPWUk28xACPLNPUnnsVPH9iWKaGiX_kpuKEhKLclRrcianjfg5BgpSAMg5tuughggghzwG9867WJlcox7QGv2RbZGoxzh8kW4QW6E278GFTa0V746tTZVs8lMGxLOjnoBA8jaBtZOig66pvHrdysajkl;lkjdhfjdsklkdsjgfhvjhskllkjfdjjsdjklaW5rVcjCFP8HlHJRfnWfb2LASB6ix605ezyrEnh-8bEoUWiJP4D_z82yvKyk4cnmIAN3vgaKWAg1fWW8pd_dNjhklLASKJDSSJ",
+  "access_token": "ACCESS_TOKEN_FROM_TRA",
   "token_type": "bearer",
   "expires_in": 86399
 }
